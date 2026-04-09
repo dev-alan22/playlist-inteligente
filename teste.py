@@ -1,0 +1,5 @@
+nome = input("Digite seu nome: ")
+telefone = input("digite seu telefone: ")
+idetidade = input("digite sua identidade: ")
+print("os dados coletados são:", nome, telefone, idetidade)
+print("Bem vindo a empresa inforcell")
