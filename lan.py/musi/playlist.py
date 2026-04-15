@@ -36,3 +36,13 @@ listar_playlist()
 
 print("Duração total:", calcular_duracao_total())
 print("Mais longa:", musica_mais_longa())
+
+playlist = []
+fila_acoes = []
+historico = []
+fila_acoes.append ("Adicionar música A")
+acao = fila_acoes.pop(0)  # pega a primeira da fila (FIFO)
+acao = fila_acoes.pop(0)  # pega a primeira da fila (FIFO)
+playlist.append("Música A")
+historico.append("Adicionar música A")
+playlist.remove("Música A")
