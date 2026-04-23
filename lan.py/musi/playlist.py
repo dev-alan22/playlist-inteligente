@@ -46,3 +46,45 @@ acao = fila_acoes.pop(0)  # pega a primeira da fila (FIFO)
 playlist.append("Música A")
 historico.append("Adicionar música A")
 playlist.remove("Música A")
+
+playlist = []
+fila_acoes = []
+historico = []
+
+import json
+
+def salvar_dados ():
+    with open ("playlist.json", "w") as arquivos:
+        json.dump(playlist, arquivos)
+
+def carregar_dados():
+    global playlist
+    try:
+        with open("playlist.json", "r") as arquivo:
+            playlist = json.load(arquivo)
+    except:
+        playlist = []
+
+def registrar_acao(acao):
+    fila_acoes.append(acao)
+    historico.append(acao)
+
+def processar_acao():
+    if fila_acoes:
+        acao = fila_acoes.pop(0)
+        if acao.startswith("Adicionar música"):
+            musica = acao.replace("Adicionar música ", "")
+            playlist.append(musica)
+        elif acao.startswith("Remover música"):
+            musica = acao.replace("Remover música ", "")
+            if musica in playlist:
+                playlist.remove(musica)
+        print(f"Ação processada: {acao}")
+
+
+def executar_fluxo():
+    carregar_dados()
+    registrar_acao("Adicionar música A")
+    processar_acao()
+    salvar_dados()
+
