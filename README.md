@@ -39,5 +39,3 @@ Isso garante que as músicas adicionadas/removidas sejam mantidas mesmo após en
 - **JSON** → formato de persistência para salvar e carregar os dados da playlist.  
 
 👉 Com isso, o sistema está completo: simples, funcional e persistente.  
-
-Quer que eu prepare um **exemplo de README com instruções de uso passo a passo** (como rodar, adicionar músicas, remover, etc.) pa
